@@ -5,6 +5,11 @@ import Menu from './screens/menu/menu';
 import About from './screens/about/about';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import * as Font from 'expo-font';
+import {useState, useEffect} from 'react';
+
+
+
 
 const Stack = createStackNavigator();
 
@@ -21,7 +26,25 @@ function MyStack() {
 
 
 export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  const loadFonts = async () => {
+    await Font.loadAsync({
+      'dancing-script': require('./assets/fonts/DancingScript-VariableFont_wght.ttf'),
+    });
+    setFontLoaded(true);
+  };
+
+  useEffect(() => {
+    loadFonts();
+  }, []);
+
+  if (!fontLoaded) {
+    return null;
+  }
+  
   return (
+    
     <NavigationContainer>
       <MyStack />
     </NavigationContainer>
