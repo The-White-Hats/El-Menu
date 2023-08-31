@@ -1,0 +1,133 @@
+{
+  "restaurant_name": "Steak for C++",
+  "location": "7th Floor, Cairo University",
+  "menu_sections": [
+    {
+      "section_name": "Appetizers",
+      "dishes": [
+        {
+          "dish_name": "Bruschetta",
+          "description": "Toasted baguette topped with diced tomatoes, fresh basil, garlic, and olive oil.",
+          "price": 8.99,
+          "rating": 4.5,
+          "image_url": "https://images.everydayhealth.com/images/recipes/How-to-Cook-It-Grilled-Tomato-Bruschetta-1440x810.jpg"
+        },
+        {
+          "dish_name": "Spinach Artichoke Dip",
+          "description": "Creamy dip made with spinach, artichokes, and melted cheese. Served with tortilla chips.",
+          "price": 10.99,
+          "rating": 4.0,
+          "image_url": "https://www.196flavors.com/wp-content/uploads/2015/01/Spinach-and-Artichoke-Dip-8.jpg"
+        },
+        {
+          "dish_name": "Caponata",
+          "description": "Savory dip made with olives, eggplant, tomato. Served with crusty bread and crispy crackers.",
+          "price": 9.99,
+          "rating": 4.8,
+          "image_url": "https://annamariasfoods.com/wp-content/uploads/2021/10/caponata-on-a-plate-annamarias-scaled.jpeg"
+        },
+        {
+          "dish_name": "Antipasto Skewers",
+          "description": "Thread olives, mozzarella, marinated artichokes and tortellini pasta onto a skewer.",
+          "price": 7.99,
+          "rating": 4.3,
+          "image_url": "https://xoxobella.com/wp-content/uploads/2023/04/antipasto_skewers_069.jpg"
+        },
+        {
+          "dish_name": "Marinated Mushrooms",
+          "description": "Gently cooked mushrooms on the stove top in a zesty sauce of red grab vinegar, olive oil, parsley, onion, brown sugar, and garlic.",
+          "price": 12.99,
+          "rating": 4.9,
+          "image_url": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Marinated-Mushrooms%2Fkitchn_julykitchn_july5296-1"
+        }
+      ]
+    },
+    {
+      "section_name": "Main Courses",
+      "dishes": [
+        {
+          "dish_name": "Grilled Salmon",
+          "description": "Freshly grilled salmon fillet seasoned with herbs. Served with steamed vegetables.",
+          "price": 18.99,
+          "rating": 4.8,
+          "image_url": "https://bod-blog-assets.prod.cd.beachbodyondemand.com/bod-blog/wp-content/uploads/2021/08/How-to-Grill-Salmon.600.rest_.jpg"
+        },
+        {
+          "dish_name": "Shrimp Pasta Primavera",
+          "description": "Fusilli pasta tossed with a medley of sautéed vegetables in a light cream sauce and shrimps.",
+          "price": 14.99,
+          "rating": 4.2,
+          "image_url": "https://dfwblobstorage.blob.core.windows.net/images/Recipe/One-Pot-Shrimp-Pasta-Primavera-wc.jpg"
+        },
+        {
+          "dish_name": "Filet Mignon",
+          "description": "Tender filet mignon steak cooked to perfection. Served with mashed potatoes and asparagus.",
+          "price": 26.99,
+          "rating": 4.9,
+          "image_url": "https://www.livefreshr.com/media/883/b5cf5e20eda87a3ff77e4a2d33828947.jpg"
+        },
+        {
+          "dish_name": "Seared Scallops",
+          "description": "Seared scallops with brown butter and lemon, parsley and caramelized onion pan sauce.",
+          "price": 21.99,
+          "rating": 4.5,
+          "image_url": "https://assets.epicurious.com/photos/5a3002b504847a34b821cb4a/1:1/w_1920,c_limit/seared-scallops-with-brown-butter-and-lemon-pan-sauce-recipe-BA-121217.jpg"
+        },
+        {
+          "dish_name": "Double-Stack Mushroom and Chicken Cheeseburgers",
+          "description": "A double-stack grilled burger with mushroom and our secret sauce and lattes, served with potato chips.",
+          "price": 13.99,
+          "rating": 4.2,
+          "image_url": "https://assets.epicurious.com/photos/60d1e9fbd62cfdf9e277542e/1:1/w_1920%2Cc_limit/ChickenMushroomBurger_RECIPE_061721_18256.jpg"
+        },
+        {
+          "dish_name": "Lamp Chops",
+          "description": "Lamp chops backed over night with fig and grape agrodolce.",
+          "price": 18.99,
+          "rating": 4.6,
+          "image_url": "https://assets.epicurious.com/photos/59d3b675db1b7a7ffca98a9c/1:1/w_1920%2Cc_limit/GFAF-Pork-Chops-with-Grape-and-Fig-Agrodolce-and-Radicchio-Salad-recipe-28092017.jpg"
+        },
+        {
+          "dish_name": "Chicken Escabèche",
+          "description": "Chicken legs, cooked on a low fire with red grape vinegar, carrot, golden raisins and olive oil.",
+          "price": 20.99,
+          "rating": 4.8,
+          "image_url": "https://assets.epicurious.com/photos/59c2d5e52fd7c502ec58f973/1:1/w_1920%2Cc_limit/chicken-escabeche-recipe-091117.jpg"
+        }
+      ]
+    },
+    {
+      "section_name": "Desserts",
+      "dishes": [
+        {
+          "dish_name": "Chocolate Lava Cake",
+          "description": "Warm chocolate cake with a gooey molten center. Served with vanilla ice cream.",
+          "price": 7.99,
+          "rating": 4.6,
+          "image_url": "https://preppykitchen.com/wp-content/uploads/2022/03/Chocolate-Lava-Cake-Recipe.jpg"
+        },
+        {
+          "dish_name": "New York Cheesecake",
+          "description": "Classic creamy cheesecake topped with your choice of fruit compote.",
+          "price": 6.99,
+          "rating": 4.4,
+          "image_url": "https://www.ninerbakes.com/wp-content/uploads/2011/10/header_ninerbakes_best_newyork_cheesecake-660x330.jpg"
+        },
+        {
+          "dish_name": "Blueberry cobbler",
+          "description": "Blueberry and orange juice pie topped with a scope of vanilla ice cream.",
+          "price": 11.99,
+          "rating": 4.8,
+          "image_url": "https://www.culinaryhill.com/wp-content/uploads/2022/06/Blueberry-Cobbler-Culinary-Hill-1200x800-1.jpg"
+        },
+        {
+          "dish_name": "Banana Paradise",
+          "description": "Butterscotch sauce with burnt-butter bananas and ice cream.",
+          "price": 10.99,
+          "rating": 4.7,
+          "image_url": "https://img.delicious.com.au/8xGKlyRj/del/2015/11/butterscotch-and-burnt-butter-bananas-21510-2.jpg"
+        }
+      ]
+    }
+  ]
+}
