@@ -1,22 +1,52 @@
 import 'react-native-gesture-handler';
-
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Home from './screens/home/home';
+import Menu from './screens/menu/menu';
+import About from './screens/about/about';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import * as Font from 'expo-font';
+import {useState, useEffect} from 'react';
 
-export default function App() {
+
+
+
+const Stack = createStackNavigator();
+
+function MyStack() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Menu" component={Menu} />
+      <Stack.Screen name="About" component={About} />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  const loadFonts = async () => {
+    await Font.loadAsync({
+      'dancing-script': require('./assets/fonts/DancingScript-VariableFont_wght.ttf'),
+    });
+    setFontLoaded(true);
+  };
+
+  useEffect(() => {
+    loadFonts();
+  }, []);
+
+  if (!fontLoaded) {
+    return null;
+  }
+  
+  return (
+    
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
