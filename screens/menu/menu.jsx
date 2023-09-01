@@ -1,4 +1,6 @@
 import {  StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard, Button } from 'react-native';
+import ListItem from '../../components/listItem/listItem';
+const menu = require('../../Menu.json')
 
 
 const Menu = ({navigation}) => {
@@ -16,6 +18,9 @@ const Menu = ({navigation}) => {
                 </View>
                 <View>
                     <Button title="About" onPress={() => navigation.navigate('About')} />
+                </View>
+                <View>
+                    <ListItem dish={menu.menu_sections[0].dishes[1]}/>
                 </View>
             </View>
         </View>
