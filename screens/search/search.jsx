@@ -22,12 +22,12 @@ const Search = ({ route }) => {
                     <FontAwesome name="search" size={24} color="gray" />
                 </View>
             </View>
-            <ScrollView>
-                {menuArr.map((section) => {
-                    return section.dishes.map((dish) => {
+            <ScrollView style={{flex: 5}}>
+                {menuArr.map((section, index1) => {
+                    return section.dishes.map((dish, index2) => {
                         return (
                             dish.dish_name.startsWith(SearchTerm) && (
-                                <ListItem dish={dish} />
+                                <ListItem id={String(index1) + String(index2)} style={{flex: 1}} dish={dish} />
                             )
                         )
                     })
