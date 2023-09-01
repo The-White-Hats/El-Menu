@@ -3,7 +3,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 
-const SearchBar = () => {
+const SearchInput = () => {
   return (
       <View style={styles.searchBar}>
           <TextInput style={styles.searchInput} placeholder="Search"/>
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SearchBar;
+export default SearchInput;
