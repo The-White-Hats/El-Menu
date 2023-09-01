@@ -1,4 +1,12 @@
-import {  StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard, Button } from 'react-native';
+import { SafeAreaView, StatusBar, View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
+import { useState } from "react";
+
+import { restaurant_name, menu_sections } from "./../../Menu.json";
+import colors from "./../../colors.json";
+import SearchInput from "./sub/searchInput";
+
+const filters = menu_sections.map((section) => section.section_name);
+filters.unshift("Full Menu");
 
 const LogoContainer = () => {
     return (
@@ -24,9 +32,42 @@ const Filters = ({selectedFilter, setSelectedFilter}) => {
 };
 
 const Menu = ({navigation}) => {
+    const [selectedFilter, setSelectedFilter] = useState("Full Menu");
     return (
+        <SafeAreaView style={styles.Menu}>
+            <LogoContainer />
+            <View style={styles.searchBarContainer}><SearchInput /></View>
             <Filters selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} />
+        </SafeAreaView>
     );
+};
+
+
+const styles = StyleSheet.create({
+    Menu: {
+        backgroundColor: "white"
+    },
+    statusbar: {
+        backgroundColor: colors.primary,
+    },
+    logoContainer: {
+        height: 80,
+        backgroundColor: colors.primary,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    logoText: {
+        color: "white",
+        fontSize: 40,
+        // fontWeight: "bold",
+        fontFamily: 'dancing-script',
+    },
+    searchBarContainer: {
+        height: 60,
+        backgroundColor: colors.primary,
+        justifyContent: "center",
+        alignItems: "center",
+    },
     filtersContainer: {
         backgroundColor: "white",
         padding: 8,
@@ -43,4 +84,5 @@ const Menu = ({navigation}) => {
         fontSize: 12,
         fontWeight: "bold",
     },
+});
 export default Menu;
