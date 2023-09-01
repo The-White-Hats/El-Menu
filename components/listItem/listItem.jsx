@@ -14,7 +14,7 @@ const ListItem = ({ dish, navigation }) => {
                 activeOpacity={0.5}
                 onPress={() =>
                     navigation.navigate('Details', {
-                        dish: dish,
+                        dish
                     })
                 }
             >
