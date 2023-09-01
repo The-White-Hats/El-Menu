@@ -7,14 +7,10 @@ Functionality:
 - Redirect to about screen when the user clicks on the about button
 */
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { restaurant_name } from "./../../Menu.json";
-
-
-
 
 
 const Home = ({ navigation }) => {
