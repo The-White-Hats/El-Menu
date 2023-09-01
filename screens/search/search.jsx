@@ -24,10 +24,10 @@ const Search = ({ route }) => {
             </View>
             <ScrollView contentContainerStyle={styles.ItemsContainer} >
                 {menuArr.map((section) => {
-                    return section.dishes.map((dish) => {
+                    return section.dishes.map((dish, index) => {
                         return (
                             dish.dish_name.startsWith(SearchTerm) && (
-                                <ListItem dish={dish} />
+                                <ListItem key={index} dish={dish} />
                             )
                         )
                     })
