@@ -3,10 +3,14 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 
-const SearchInput = () => {
+const SearchInput = ({navigation}) => {
+  const handleSubmit = (event, searchTerm) => {
+    event.target.clear();
+    navigation.navigate('Search', {searchTerm});
+  }
   return (
       <View style={styles.searchBar}>
-          <TextInput style={styles.searchInput} placeholder="Search"/>
+          <TextInput style={styles.searchInput} placeholder="Search" onSubmitEditing={(event)=>handleSubmit(event, event.nativeEvent.text)}/>
           <View style={styles.searchIconContainer}><FontAwesome name="search" size={24} color="gray" /></View>
       </View>
   );
