@@ -1,5 +1,8 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-export default function Details({dish}) {
+
+const Details = ({route}) => {
+  const { dish } = route.params;
+
   return (
     <View style={detailsStyles.container}>
       <View style={detailsStyles.img_container}>
@@ -25,6 +28,7 @@ export default function Details({dish}) {
     </View>
   );
 }
+
 const detailsStyles = StyleSheet.create({
   container: {
     display: "flex",
@@ -100,3 +104,5 @@ const detailsStyles = StyleSheet.create({
     color: "#F65F00",
   },
 });
+
+export default Details;
