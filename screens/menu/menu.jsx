@@ -19,8 +19,8 @@ const LogoContainer = () => {
 const Filters = ({selectedFilter, setSelectedFilter}) => {
     return (
         <ScrollView horizontal={true} style={styles.filtersContainer} showsHorizontalScrollIndicator={false}>
-        {filters.map((filter) => (
-            <Pressable style={{...styles.filter, backgroundColor: (filter === selectedFilter) ? colors.primary : colors.gray}} onPress={()=>setSelectedFilter(filter)}>
+        {filters.map((filter, index) => (
+            <Pressable key={index} style={{...styles.filter, backgroundColor: (filter === selectedFilter) ? colors.primary : colors.gray}} onPress={()=>setSelectedFilter(filter)}>
 
                 <Text style={{...styles.filterText, color: (filter === selectedFilter) ? "white" : colors.filterText}}>{filter}</Text>
 
