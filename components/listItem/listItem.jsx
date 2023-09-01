@@ -1,5 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
 
+import colors from './../../colors.json'
+
 const ListItem = ({ dish, navigation }) => {
     return (
         <TouchableOpacity style={styles.container} activeOpacity={0.8}>
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
         width: '95%',
         marginBottom: 10,
         borderRadius: 20,
-        backgroundColor: 'white',
+        backgroundColor: colors.gray,
         shadowColor: '#171717',
         shadowOffset: { height: 5 },
         shadowOpacity: 0.3,
