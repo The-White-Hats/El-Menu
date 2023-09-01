@@ -6,40 +6,57 @@ Functionality:
 - Redirect to Menus screen when the user clicks on the menu button
 - Redirect to about screen when the user clicks on the about button
 */
-import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard, Button, ImageBackground } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'react-native';
-import React from 'react';
-
-
-
+import {
+    StyleSheet,
+    Text,
+    View,
+    KeyboardAvoidingView,
+    TextInput,
+    TouchableOpacity,
+    Keyboard,
+    Button,
+    ImageBackground,
+} from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { StatusBar } from 'react-native'
+import React from 'react'
 
 const Home = ({ navigation }) => {
-    <StatusBar backgroundColor="#000000" barStyle="light-content"/>
+    <StatusBar backgroundColor="#000000" barStyle="light-content" />
     return (
-            <ImageBackground
-                source={require('../../assets/dishes.jpeg')}
-                style={{ width: '100%', height: '100%' }}
+        <ImageBackground
+            source={require('../../assets/dishes.jpeg')}
+            style={{ width: '100%', height: '100%' }}
+        >
+            <LinearGradient
+                colors={['#f76001cc', '#f13902ee', '#fb0d05']}
+                style={styles.container}
             >
-                <LinearGradient
-                    colors={['#f76001cc', '#f13902ee', '#fb0d05']}
-                    style={styles.container}
-                >
-                    <View style={styles.header}>
-                        <Text style={styles.headerText}>La Perle</Text>
-                    </View>
-                    <View style={styles.body}>
-                        <TouchableOpacity style={{ ...styles.button, backgroundColor: "#ffffff" }} onPress={() => navigation.navigate('Menu')}>
-                            <Text style={styles.buttonText}>L'exquis Menu</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('About')}>
-                            <Text style={styles.buttonText}>About</Text>
-                        </TouchableOpacity>
-                    </View>
-                </LinearGradient>
-            </ImageBackground>
-    );
+                <View style={styles.header}>
+                    <Text style={styles.headerText}>La Perle</Text>
+                </View>
+                <View style={styles.body}>
+                    <TouchableOpacity
+                        style={{ ...styles.button, backgroundColor: '#ffffff' }}
+                        onPress={() => {
+                            navigation.navigate('Search', {
+                              searchTerm: 'A',
+                            });
+                        }}
+                    >
+                        <Text style={styles.buttonText}>L'exquis Menu</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => navigation.navigate('About')}
+                    >
+                        <Text style={styles.buttonText}>About</Text>
+                    </TouchableOpacity>
+                </View>
+            </LinearGradient>
+        </ImageBackground>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -72,7 +89,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 50,
         borderWidth: 2,
-
     },
     touched: {
         backgroundColor: '#fff',
@@ -82,7 +98,6 @@ const styles = StyleSheet.create({
         fontSize: 35,
         fontFamily: 'dancing-script',
     },
-});
+})
 
-export default Home;
-
+export default Home

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/home/home';
 import Menu from './screens/menu/menu';
 import About from './screens/about/about';
+import Search from './screens/search/search'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Font from 'expo-font';
@@ -17,7 +18,7 @@ function MyStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Menu" component={Menu} />
+      <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="About" component={About} />
     </Stack.Navigator>
   );
