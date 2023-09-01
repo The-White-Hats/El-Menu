@@ -27,19 +27,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-<<<<<<< HEAD
-        padding: 20,
-        paddingLeft: 30,
-        margin: 10,
-        width: '95%',
-        height: '25%',
-=======
         paddingVertical: 15,
         paddingLeft: 20,
         paddingRight: 20,
         width: '95%',
         marginBottom: 10,
->>>>>>> 9f57008c04f213e690e519b9f5738a3d849b920e
         borderRadius: 30,
         backgroundColor: 'white',
         shadowColor: '#171717',
@@ -48,12 +40,7 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
     },
     Item: {
-<<<<<<< HEAD
-        width: '100%',
-        fontSize: 20,
-=======
         fontSize: 18,
->>>>>>> 9f57008c04f213e690e519b9f5738a3d849b920e
     },
     price: {
         fontSize: 16,
