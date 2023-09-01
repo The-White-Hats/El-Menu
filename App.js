@@ -1,13 +1,14 @@
 import 'react-native-gesture-handler';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import {useState, useEffect} from 'react';
+import { StatusBar } from 'react-native';
+import * as Font from 'expo-font';
+
 import Home from './screens/home/home';
 import Menu from './screens/menu/menu';
 import About from './screens/about/about';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as Font from 'expo-font';
-import {useState, useEffect} from 'react';
-
+import colors from "./colors.json";
 
 
 
@@ -44,9 +45,11 @@ export default function App() {
   }
   
   return (
-    
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
+    <>
+      <StatusBar backgroundColor={colors.primary} barStyle="dark-content"/>
+      <NavigationContainer>
+        <MyStack />
+      </NavigationContainer>
+    </>
   );
 }
