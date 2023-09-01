@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet} from 'react-native'
 
 const ListItem = ({ dish, navigation }) => {
     return (
         <TouchableOpacity style={styles.container} activeOpacity={0.8}>
-            <View>
+            <View style={{width: '55%'}}>
                 <Text style={styles.Item}>{dish.dish_name}</Text>
                 <Text style={styles.price}>{dish.price}</Text>
             </View>
@@ -27,12 +27,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingVertical: 15,
+        padding: 20,
         paddingLeft: 30,
-        paddingRight: 20,
         margin: 10,
         width: '95%',
-        height: '50%',
+        height: '25%',
         borderRadius: 30,
         backgroundColor: 'white',
         shadowColor: '#171717',
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
     },
     Item: {
-        width: '80%',
+        width: '100%',
         fontSize: 20,
     },
     price: {
