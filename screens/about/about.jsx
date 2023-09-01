@@ -1,25 +1,46 @@
 import {  StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard, Button } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useState, useEffect } from 'react';
 
 
 const About = ({navigation}) => {
-    return (
-        <View >
-            <View>
-                <Text>About</Text>
-            </View>
-            <View >
-                <Text>This is the About screen</Text>
-            </View>
-            <View >
-                <View >
-                    <Button title="Menu" onPress={() => navigation.navigate('Menu')} />
-                </View>
+    const [click, setClick] = useState(0);
+    const [secret, setSecret] = useState();
+    
+    useEffect(() => {
+        if (click > 20) {
+            setClick(0);
+            setSecret(
                 <View>
-                    <Button title="About" onPress={() => navigation.navigate('About')} />
+                    <Text style= {styles.secretText} >بتضغط عليا ليييييييييييييييه منا مضغوط لوحدي 😢</Text>
                 </View>
+            );
+        }
+    }, [click]);
+    return (
+        <SafeAreaView style={styles.container} onTouchStart={() => setClick(click + 1)}>
+            <View style = {styles.about}>
+                <Text style={styles.text}>v0.1.0</Text>
+                {secret}
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    about: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    text:{
+        fontSize: 50, color: '#222222'
+    },
+    secretText:{
+        fontSize: 15, color: '#222222'
+    }
+});
 export default About;
