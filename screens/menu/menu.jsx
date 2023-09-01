@@ -4,6 +4,7 @@ import { useState } from "react";
 import { restaurant_name, menu_sections } from "./../../Menu.json";
 import colors from "./../../colors.json";
 import SearchInput from "./sub/searchInput";
+import ListItem from "./../../components/listItem/listItem.jsx";
 
 const filters = menu_sections.map((section) => section.section_name);
 filters.unshift("Full Menu");
@@ -31,21 +32,53 @@ const Filters = ({selectedFilter, setSelectedFilter}) => {
     );
 };
 
+const MenuSection = ({section, navigation}) => {
+    return (
+        <View style={styles.MenuSection}>
+            <Text style={styles.MenuSectionText}>{section.section_name}</Text>
+            <View style={{alignItems: 'center'}}>
+            {section.dishes.map((dish, index) => (
+                <ListItem key={index} dish={dish} navigation={navigation}/>
+            ))}
+            </View>
+        </View>
+    );
+};
+
+const MenuSections = ({navigation, selectedFilter}) => {
+    console.log(selectedFilter)
+    return (
+        <>
+            {menu_sections.map((section, index)=>( section.section_name === selectedFilter || selectedFilter === 'Full Menu') && <MenuSection key={index} section={section} navigation={navigation}/>)}
+        </>
+    );
+};
+
 const Menu = ({navigation}) => {
     const [selectedFilter, setSelectedFilter] = useState("Full Menu");
     return (
+        <>
+        {/* <View style={styles.whiteBackground}></View> */}
         <SafeAreaView style={styles.Menu}>
-            <LogoContainer />
-            <View style={styles.searchBarContainer}><SearchInput /></View>
-            <Filters selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} />
+            <ScrollView stickyHeaderIndices={[1]} showsVerticalScrollIndicator={false}>
+                <LogoContainer />
+                <View>
+                    <View style={styles.searchBarContainer}><SearchInput /></View>
+                    <Filters selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} />
+                </View>
+                <MenuSections navigation={navigation} selectedFilter={selectedFilter}/>
+            </ScrollView>
         </SafeAreaView>
+        
+        </>
     );
 };
 
 
 const styles = StyleSheet.create({
     Menu: {
-        backgroundColor: "white"
+        backgroundColor: "white",
+        flex: 1
     },
     statusbar: {
         backgroundColor: colors.primary,
@@ -59,7 +92,6 @@ const styles = StyleSheet.create({
     logoText: {
         color: "white",
         fontSize: 40,
-        // fontWeight: "bold",
         fontFamily: 'dancing-script',
     },
     searchBarContainer: {
@@ -84,5 +116,22 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: "bold",
     },
+    whiteBackground: {
+        position: "absolute",
+        backgroundColor: "white",
+        height: "100%",
+        width: "100%",
+    },
+    MenuSection: {
+        // flex: 1,
+        // backgroundColor: "white"
+    },
+    MenuSectionText: {
+        fontSize: 32,
+        fontWeight: "800",
+        paddingLeft: 10,
+        marginBottom: 12,
+        marginTop: 16
+    }
 });
 export default Menu;
