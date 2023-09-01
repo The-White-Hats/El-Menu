@@ -1,5 +1,12 @@
 import {  StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard, Button } from 'react-native';
 
+const LogoContainer = () => {
+    return (
+        <View style={styles.logoContainer}>
+            <Text style={styles.logoText}>{restaurant_name}</Text>
+        </View>
+    );
+};
 
 const Menu = ({navigation}) => {
     return (
