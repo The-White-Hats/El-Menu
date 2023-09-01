@@ -46,7 +46,6 @@ const MenuSection = ({section, navigation}) => {
 };
 
 const MenuSections = ({navigation, selectedFilter}) => {
-    console.log(selectedFilter)
     return (
         <>
             {menu_sections.map((section, index)=>( section.section_name === selectedFilter || selectedFilter === 'Full Menu') && <MenuSection key={index} section={section} navigation={navigation}/>)}
@@ -57,20 +56,16 @@ const MenuSections = ({navigation, selectedFilter}) => {
 const Menu = ({navigation}) => {
     const [selectedFilter, setSelectedFilter] = useState("Full Menu");
     return (
-        <>
-        {/* <View style={styles.whiteBackground}></View> */}
         <SafeAreaView style={styles.Menu}>
             <ScrollView stickyHeaderIndices={[1]} showsVerticalScrollIndicator={false}>
                 <LogoContainer />
                 <View>
-                    <View style={styles.searchBarContainer}><SearchInput /></View>
+                    <View style={styles.searchBarContainer}><SearchInput navigation={navigation}/></View>
                     <Filters selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} />
                 </View>
                 <MenuSections navigation={navigation} selectedFilter={selectedFilter}/>
             </ScrollView>
         </SafeAreaView>
-        
-        </>
     );
 };
 
@@ -123,8 +118,6 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     MenuSection: {
-        // flex: 1,
-        // backgroundColor: "white"
     },
     MenuSectionText: {
         fontSize: 32,
