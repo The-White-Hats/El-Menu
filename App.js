@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Menu" component={Menu} />
       <Stack.Screen name="About" component={About} />
