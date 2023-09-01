@@ -1,18 +1,26 @@
-import { View, Text, TouchableOpacity, StyleSheet, Button} from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
 
-const ListItem = ({dish}) => {
+const ListItem = ({ dish, navigation }) => {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} activeOpacity={0.8}>
             <View>
                 <Text style={styles.Item}>{dish.dish_name}</Text>
                 <Text style={styles.price}>{dish.price}</Text>
             </View>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity
+                style={styles.btn}
+                activeOpacity={0.5}
+                onPress={() =>
+                    navigation.navigate('Details', {
+                        dish: dish,
+                    })
+                }
+            >
                 <Text style={styles.btnText}>Details</Text>
             </TouchableOpacity>
         </TouchableOpacity>
-    );
-};
+    )
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -28,8 +36,8 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         backgroundColor: 'white',
         shadowColor: '#171717',
-        shadowOffset: {height: 5},
-        shadowOpacity: 0.3, 
+        shadowOffset: { height: 5 },
+        shadowOpacity: 0.3,
         shadowRadius: 5,
     },
     Item: {
@@ -46,12 +54,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#f64f06',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50
+        borderRadius: 50,
     },
     btnText: {
         fontSize: 20,
         color: 'white',
-    }
-});
+    },
+})
 
-export default ListItem;
+export default ListItem
