@@ -18,7 +18,6 @@ import React from 'react';
 const Home = ({ navigation }) => {
     <StatusBar backgroundColor="#000000" barStyle="light-content"/>
     return (
-        <SafeAreaView>
             <ImageBackground
                 source={require('../../assets/dishes.jpeg')}
                 style={{ width: '100%', height: '100%' }}
@@ -40,7 +39,6 @@ const Home = ({ navigation }) => {
                     </View>
                 </LinearGradient>
             </ImageBackground>
-        </SafeAreaView>
     );
 }
 

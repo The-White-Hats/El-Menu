@@ -20,6 +20,20 @@ const About = ({navigation}) => {
     return (
         <SafeAreaView style={styles.container} onTouchStart={() => setClick(click + 1)}>
             <View style = {styles.about}>
+                <Text style={styles.text}>La Perle:</Text>
+                <Text style={styles.text}>A restaurant in the heart of the city of Alexandria, Egypt.</Text>
+                <Text style={styles.text}>We serve the best food in town.</Text>
+                <Text style={styles.text}>We are open from 10am to 11pm every day.</Text>
+                <Text style={styles.text}>Contact us on +20123456789</Text>
+                <Text style={styles.text}>Find us on Google Maps</Text>
+                <Text style={styles.text}>Follow us on Instagram</Text>
+                <Text style={styles.text}>Follow us on Facebook</Text>
+                <Text style={styles.text}>Follow us on Twitter</Text>
+                <Text style={{...styles.text,marginTop:10}}>Contributors:</Text>
+                <Text style={{...styles.text,color:"#c75300",marginTop:10}}>Ahmed Alaa</Text>
+                <Text style={{...styles.text,color:"#a84c00"}}>Ahmed Hamed</Text>
+                <Text style={{...styles.text,color:"#8a4000"}}>Marwan Alhameedy</Text>
+                <Text style={{...styles.text,color:"#6b3400",marginBottom:10}}>Adham Hussin</Text>
                 <Text style={styles.text}>v0.1.0</Text>
                 {secret}
             </View>
@@ -29,15 +43,14 @@ const About = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 0,
     },
     about: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        flex: 0,
+        marginLeft: 10,
     },
     text:{
-        fontSize: 50, color: '#222222'
+        fontSize: 20, color: '#222222'
     },
     secretText:{
         fontSize: 15, color: '#222222'
