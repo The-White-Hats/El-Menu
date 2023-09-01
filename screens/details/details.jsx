@@ -1,7 +1,5 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import menu from "../../Menu.json";
-export default function Details() {
-  const dish = menu.menu_sections[1].dishes[0];
+export default function Details({dish}) {
   return (
     <View style={detailsStyles.container}>
       <View style={detailsStyles.img_container}>
