@@ -1,25 +1,28 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-export default function Details(dish) {
+import menu from "../../Menu.json";
+export default function Details() {
+  const dish = menu.menu_sections[1].dishes[0];
   return (
     <View style={detailsStyles.container}>
       <View style={detailsStyles.img_container}>
         <Image source={{ uri: dish.image_url }} style={detailsStyles.img} />
       </View>
-      <View style={detailsStyles.name_rating_container}>
-        <Text style={detailsStyles.main_font}>{dish.dish_name}</Text>
-        <View style={detailsStyles.rating_container}>
-          <Image
-            source={require("../../assets/star.png")}
-            style={detailsStyles.star}
-          />
-          <Text style={detailsStyles.rating}>{dish.rating}</Text>
+      <View style={detailsStyles.info}>
+        <View style={detailsStyles.name_rating_container}>
+          <Text style={detailsStyles.main_font}>{dish.dish_name}</Text>
+          <View style={detailsStyles.rating_container}>
+            <Image
+              source={require("../../assets/star.png")}
+              style={detailsStyles.star}
+            />
+            <Text style={detailsStyles.rating}>{dish.rating}</Text>
+          </View>
         </View>
-      </View>
-      <Text style={detailsStyles.price}>{dish.price} LE</Text>
-
-      <View style={detailsStyles.about}>
-        <Text style={detailsStyles.main_font}>About</Text>
-        <Text style={detailsStyles.description}>{dish.description}</Text>
+        <Text style={detailsStyles.price}>{dish.price} €</Text>
+        <View style={detailsStyles.about}>
+          <Text style={detailsStyles.main_font}>About</Text>
+          <Text style={detailsStyles.description}>{dish.description}</Text>
+        </View>
       </View>
     </View>
   );
@@ -33,12 +36,19 @@ const detailsStyles = StyleSheet.create({
     justifyContent: "flex-start",
     width: "100%",
     height: "100%",
-    padding: 30,
   },
   img: {
     width: "100%",
     height: "100%",
-    borderRadius: 20,
+  },
+  info: {
+    padding: 20,
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    gap: 20,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
   img_container: {
     width: "100%",
@@ -57,17 +67,16 @@ const detailsStyles = StyleSheet.create({
   main_font: {
     fontWeight: "bold",
     fontSize: 20,
-    color: "#F65F00",
   },
   price: {
     fontWeight: "bold",
     fontSize: 17,
-    color: "gray",
+    color: "#F65F00",
   },
   description: {
     fontWeight: "500",
     fontSize: 17,
-    color: "#F98B46",
+    color: "gray",
   },
   about: {
     display: "flex",
@@ -90,5 +99,6 @@ const detailsStyles = StyleSheet.create({
   rating: {
     fontSize: 17,
     fontWeight: "500",
+    color: "#F65F00",
   },
 });
