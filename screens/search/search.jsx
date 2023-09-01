@@ -22,7 +22,7 @@ const Search = ({ route }) => {
                     <FontAwesome name="search" size={24} color="gray" />
                 </View>
             </View>
-            <ScrollView>
+            <ScrollView contentContainerStyle={styles.ItemsContainer} >
                 {menuArr.map((section) => {
                     return section.dishes.map((dish) => {
                         return (
@@ -64,6 +64,10 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomRightRadius: 20,
     },
+    ItemsContainer:{
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 })
 
 export default Search

@@ -3,9 +3,9 @@ import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native'
 const ListItem = ({ dish, navigation }) => {
     return (
         <TouchableOpacity style={styles.container} activeOpacity={0.8}>
-            <View>
+            <View style={{width: '60%'}}>
                 <Text style={styles.Item}>{dish.dish_name}</Text>
-                <Text style={styles.price}>{dish.price}</Text>
+                <Text style={styles.price}>{dish.price}€</Text>
             </View>
             <TouchableOpacity
                 style={styles.btn}
@@ -28,11 +28,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingVertical: 15,
-        paddingLeft: 30,
+        paddingLeft: 20,
         paddingRight: 20,
-        margin: 10,
         width: '95%',
-        height: '50%',
+        marginBottom: 10,
         borderRadius: 30,
         backgroundColor: 'white',
         shadowColor: '#171717',
@@ -41,8 +40,7 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
     },
     Item: {
-        width: '80%',
-        fontSize: 20,
+        fontSize: 18,
     },
     price: {
         fontSize: 16,
@@ -50,7 +48,7 @@ const styles = StyleSheet.create({
     },
     btn: {
         width: '40%',
-        height: '100%',
+        height: 50,
         backgroundColor: '#f64f06',
         alignItems: 'center',
         justifyContent: 'center',
