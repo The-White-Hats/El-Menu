@@ -26,7 +26,7 @@ const Search = ({ route }) => {
                 {SearchTerm && menuArr.map((section) => {
                     return section.dishes.map((dish, index) => {
                         return (
-                            dish.dish_name.startsWith(SearchTerm) && (
+                            dish.dish_name.toLowerCase().startsWith(String(SearchTerm).toLowerCase()) && (
                                 <ListItem key={index} dish={dish} />
                             )
                         )
