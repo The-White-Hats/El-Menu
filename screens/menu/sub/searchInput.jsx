@@ -1,11 +1,10 @@
 import { TextInput, View, StyleSheet } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
-import Search from '../../search/search'
 
 const SearchInput = ({ navigation }) => {
     const handleSubmit = (event, searchTerm) => {
         event.target.clear()
-        navigation.navigate('Search', { searchTerm, navigation })
+        navigation.navigate('Search', { searchTerm })
     }
     return (
         <View style={styles.searchBar}>

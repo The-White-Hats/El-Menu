@@ -6,8 +6,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
 const menu = require('../../Menu.json')
 
-const Search = ({ route }) => {
-    const { searchTerm, navigation } = route.params
+const Search = ({ route, navigation }) => {
+    const { searchTerm } = route.params
     const [SearchTerm, setSearchTerm] = useState(searchTerm)
     const menuArr = menu.menu_sections
     return (
