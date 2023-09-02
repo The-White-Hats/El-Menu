@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 
+
 const Details = ({route}) => {
   const { dish } = route.params;
 
@@ -28,6 +29,7 @@ const Details = ({route}) => {
     </View>
   );
 }
+
 
 const detailsStyles = StyleSheet.create({
   container: {
@@ -68,7 +70,7 @@ const detailsStyles = StyleSheet.create({
   },
   main_font: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 20
   },
   price: {
     fontWeight: "bold",
@@ -78,6 +80,7 @@ const detailsStyles = StyleSheet.create({
   description: {
     fontWeight: "500",
     fontSize: 17,
+
     color: "gray",
   },
   about: {
