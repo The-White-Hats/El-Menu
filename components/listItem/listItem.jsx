@@ -5,7 +5,7 @@ const ListItem = ({ dish, navigation }) => {
         <TouchableOpacity style={styles.container} activeOpacity={0.8}>
             <View style={{width: '60%'}}>
                 <Text style={styles.Item}>{dish.dish_name}</Text>
-                <Text style={styles.price}>{dish.price}€</Text>
+                <Text style={styles.price}>{dish.price} €</Text>
             </View>
             <TouchableOpacity
                 style={styles.btn}
