@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 const menu = require('../../Menu.json')
 
 const Search = ({ route }) => {
-    const { searchTerm } = route.params
+    const { searchTerm, navigation } = route.params
     const [SearchTerm, setSearchTerm] = useState(searchTerm)
     const menuArr = menu.menu_sections
     return (
@@ -22,16 +22,25 @@ const Search = ({ route }) => {
                     <FontAwesome name="search" size={24} color="gray" />
                 </View>
             </View>
-            <ScrollView contentContainerStyle={styles.ItemsContainer} >
-                {SearchTerm && menuArr.map((section) => {
-                    return section.dishes.map((dish, index) => {
-                        return (
-                            dish.dish_name.toLowerCase().startsWith(String(SearchTerm).toLowerCase()) && (
-                                <ListItem key={index} dish={dish} />
+            <ScrollView contentContainerStyle={styles.ItemsContainer}>
+                {SearchTerm &&
+                    menuArr.map((section) => {
+                        return section.dishes.map((dish, index) => {
+                            return (
+                                dish.dish_name
+                                    .toLowerCase()
+                                    .startsWith(
+                                        String(SearchTerm).toLowerCase()
+                                    ) && (
+                                    <ListItem
+                                        key={index}
+                                        dish={dish}
+                                        navigation={navigation}
+                                    />
+                                )
                             )
-                        )
-                    })
-                })}
+                        })
+                    })}
             </ScrollView>
         </>
     )
@@ -64,10 +73,10 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomRightRadius: 20,
     },
-    ItemsContainer:{
+    ItemsContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
 })
 
 export default Search

@@ -6,56 +6,53 @@ Functionality:
 - Redirect to Menus screen when the user clicks on the menu button
 - Redirect to about screen when the user clicks on the about button
 */
+import React from 'react'
 import {
+    SafeAreaView,
     StyleSheet,
     Text,
     View,
-    KeyboardAvoidingView,
-    TextInput,
     TouchableOpacity,
-    Keyboard,
-    Button,
     ImageBackground,
 } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { StatusBar } from 'react-native'
-import React from 'react'
+
+import { restaurant_name } from './../../Menu.json'
 
 const Home = ({ navigation }) => {
-    <StatusBar backgroundColor="#000000" barStyle="light-content" />
     return (
-        <ImageBackground
-            source={require('../../assets/dishes.jpeg')}
-            style={{ width: '100%', height: '100%' }}
-        >
-            <LinearGradient
-                colors={['#f76001cc', '#f13902ee', '#fb0d05']}
-                style={styles.container}
+        <SafeAreaView style={{ flex: 1 }}>
+            <ImageBackground
+                source={require('../../assets/dishes.jpeg')}
+                style={{ width: '100%', height: '100%' }}
             >
-                <View style={styles.header}>
-                    <Text style={styles.headerText}>La Perle</Text>
-                </View>
-                <View style={styles.body}>
-                    <TouchableOpacity
-                        style={{ ...styles.button, backgroundColor: '#ffffff' }}
-                        onPress={() => {
-                            navigation.navigate('Search', {
-                              searchTerm: 'A',
-                            });
-                        }}
-                    >
-                        <Text style={styles.buttonText}>L'exquis Menu</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={() => navigation.navigate('About')}
-                    >
-                        <Text style={styles.buttonText}>About</Text>
-                    </TouchableOpacity>
-                </View>
-            </LinearGradient>
-        </ImageBackground>
+                <LinearGradient
+                    colors={['#f76001cc', '#f13902ee', '#fb0d05']}
+                    style={styles.container}
+                >
+                    <View style={styles.header}>
+                        <Text style={styles.headerText}>{restaurant_name}</Text>
+                    </View>
+                    <View style={styles.body}>
+                        <TouchableOpacity
+                            style={{
+                                ...styles.button,
+                                backgroundColor: '#ffffff',
+                            }}
+                            onPress={() => navigation.navigate('Menu')}
+                        >
+                            <Text style={styles.buttonText}>Explore Menu</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => navigation.navigate('About')}
+                        >
+                            <Text style={styles.buttonText}>About</Text>
+                        </TouchableOpacity>
+                    </View>
+                </LinearGradient>
+            </ImageBackground>
+        </SafeAreaView>
     )
 }
 
