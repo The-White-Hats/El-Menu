@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 
 const MenuNavigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name='Menu' component={Menu}/>
         <Stack.Screen name='Search' component={Search}/>
