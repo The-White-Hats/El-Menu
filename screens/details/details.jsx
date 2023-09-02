@@ -1,5 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-export default function Details(dish) {
+
+export default function Details({ route }) {
+  const { dish } = route.params;
   return (
     <View style={detailsStyles.container}>
       <View style={detailsStyles.img_container}>

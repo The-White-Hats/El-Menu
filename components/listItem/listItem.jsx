@@ -13,8 +13,7 @@ const ListItem = ({ dish, navigation }) => {
                 activeOpacity={0.5}
                 onPress={() =>
                     navigation.navigate('Details', {
-                        dish,
-                        navigation,
+                        dish
                     })
                 }
             >
@@ -33,13 +32,13 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         width: '95%',
-        marginBottom: 10,
+        marginVertical: 7,
         borderRadius: 20,
         backgroundColor: colors.gray,
         shadowColor: '#171717',
         shadowOffset: { height: 5 },
         shadowOpacity: 0.3,
-        shadowRadius: 5,
+        shadowRadius: 4,
     },
     Item: {
         fontSize: 18,

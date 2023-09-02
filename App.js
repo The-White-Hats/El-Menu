@@ -9,6 +9,8 @@ import Home from './screens/home/home';
 import Menu from './screens/menu/menu';
 import About from './screens/about/about';
 import colors from "./colors.json";
+import Search from './screens/search/search';
+import Details from './screens/details/details';
 
 
 
@@ -18,8 +20,10 @@ function MyStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Menu" component={Menu} />
       <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="About" component={About} />
+      <Stack.Screen name="Details" component={Details} />
     </Stack.Navigator>
   );
 }

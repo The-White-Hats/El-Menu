@@ -3,6 +3,7 @@ import { FontAwesome } from '@expo/vector-icons'
 import { useState } from 'react'
 import ListItem from '../../components/listItem/listItem'
 import { ScrollView } from 'react-native-gesture-handler'
+import { SafeAreaView } from 'react-native-safe-area-context'
 const menu = require('../../Menu.json')
 
 const Search = ({ route }) => {
@@ -10,7 +11,7 @@ const Search = ({ route }) => {
     const [SearchTerm, setSearchTerm] = useState(searchTerm)
     const menuArr = menu.menu_sections
     return (
-        <>
+        <SafeAreaView>
             <View style={styles.searchBar}>
                 <TextInput
                     style={styles.searchInput}
@@ -42,7 +43,7 @@ const Search = ({ route }) => {
                         })
                     })}
             </ScrollView>
-        </>
+        </SafeAreaView>
     )
 }
 
@@ -51,7 +52,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 20,
+        marginBottom: 20,
+        marginTop: 30,
     },
     searchInput: {
         height: 40,
