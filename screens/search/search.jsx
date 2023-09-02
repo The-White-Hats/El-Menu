@@ -4,6 +4,7 @@ import { useState } from 'react'
 import ListItem from '../../components/listItem/listItem'
 import { ScrollView } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import colors from './../../colors.json'
 const menu = require('../../Menu.json')
 
 const Search = ({ route, navigation }) => {
@@ -11,7 +12,7 @@ const Search = ({ route, navigation }) => {
     const [SearchTerm, setSearchTerm] = useState(searchTerm)
     const menuArr = menu.menu_sections
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.searchScreen}>
             <View style={styles.searchBar}>
                 <TextInput
                     style={styles.searchInput}
@@ -48,6 +49,10 @@ const Search = ({ route, navigation }) => {
 }
 
 const styles = StyleSheet.create({
+    searchScreen: {
+        backgroundColor: 'white',
+        flex: 1
+    },
     searchBar: {
         flexDirection: 'row',
         justifyContent: 'center',
@@ -58,7 +63,7 @@ const styles = StyleSheet.create({
     searchInput: {
         height: 40,
         width: 300,
-        backgroundColor: 'white',
+        backgroundColor: colors.gray,
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
         paddingLeft: 16,
@@ -68,7 +73,7 @@ const styles = StyleSheet.create({
     searchIconContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: colors.gray,
         width: 40,
         paddingRight: 9,
         height: 40,
