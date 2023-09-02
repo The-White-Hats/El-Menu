@@ -1,6 +1,8 @@
 import { TextInput, View, StyleSheet } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 
+import colors from './../../../colors.json'
+
 const SearchInput = ({ navigation }) => {
     const handleSubmit = (event, searchTerm) => {
         event.target.clear()
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     searchInput: {
         height: 40,
         width: 300,
-        backgroundColor: 'white',
+        backgroundColor: colors.gray,
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
         paddingLeft: 16,
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     searchIconContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: colors.gray,
         width: 40,
         paddingRight: 9,
         height: 40,
