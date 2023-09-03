@@ -12,8 +12,8 @@ const MenuNavigation = () => {
     <NavigationContainer independent={true}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name='Menu' component={Menu}/>
-        <Stack.Screen name='Search' component={Search}/>
-        <Stack.Screen name='Details' component={Details}/>
+        <Stack.Screen name='Search' component={Search} options={{presentation: 'modal'}}/>
+        <Stack.Screen name='Details' component={Details} options={{presentation: 'modal'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
