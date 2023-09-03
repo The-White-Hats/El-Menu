@@ -1,34 +1,25 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet } from 'react-native'
 import {useState, useEffect} from 'react';
-import { StatusBar } from 'react-native';
 import * as Font from 'expo-font';
 
 import Home from './screens/home/home';
-import Menu from './screens/menu/menu';
+import MenuNavigation from './MenuNavigation';
 import About from './screens/about/about';
-import colors from "./colors.json";
-import Search from './screens/search/search';
-import Details from './screens/details/details';
-
-
 
 const Stack = createStackNavigator();
 
 function MyStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Menu" component={Menu} />
-      <Stack.Screen name="Search" component={Search} />
-      <Stack.Screen name="About" component={About} />
-      <Stack.Screen name="Details" component={Details} />
+      <Stack.Screen name='Home' component={Home} />
+      <Stack.Screen name='MenuNavigation' component={MenuNavigation} />
+      <Stack.Screen name='About' component={About} options={styles}/>
     </Stack.Navigator>
   );
-}
-
-
+};
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -49,11 +40,17 @@ export default function App() {
   }
   
   return (
-    <>
-      <StatusBar backgroundColor={colors.primary} barStyle="dark-content"/>
-      <NavigationContainer>
-        <MyStack />
-      </NavigationContainer>
-    </>
+    <NavigationContainer independent={true}>
+      <MyStack />
+    </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  headerShown: true,
+  headerTitleStyle: {
+    fontWeight: 'bold'
+  },
+  headerLeft: ()=> null,
+  headerTitleAlign: 'center'
+});

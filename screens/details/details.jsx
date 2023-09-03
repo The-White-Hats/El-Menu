@@ -1,11 +1,13 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, StatusBar } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const Details = ({route}) => {
   const { dish } = route.params;
 
   return (
-    <View style={detailsStyles.container}>
+    <SafeAreaView style={detailsStyles.container}>
+      <StatusBar backgroundColor='white' barStyle='dark-content' />
       <View style={detailsStyles.img_container}>
         <Image source={{ uri: dish.image_url }} style={detailsStyles.img} />
       </View>
@@ -26,20 +28,15 @@ const Details = ({route}) => {
           <Text style={detailsStyles.description}>{dish.description}</Text>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
-}
-
+};
 
 const detailsStyles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexDirection: "column",
     gap: 20,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    width: "100%",
-    height: "100%",
+    flex: 1,
+    backgroundColor: 'white',
   },
   img: {
     width: "100%",
@@ -57,12 +54,9 @@ const detailsStyles = StyleSheet.create({
   img_container: {
     width: "100%",
     height: 200,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    marginTop: -28
   },
   name_rating_container: {
-    display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
@@ -70,7 +64,8 @@ const detailsStyles = StyleSheet.create({
   },
   main_font: {
     fontWeight: "bold",
-    fontSize: 20
+    fontSize: 20,
+    width:"70%"
   },
   price: {
     fontWeight: "bold",
@@ -80,14 +75,10 @@ const detailsStyles = StyleSheet.create({
   description: {
     fontWeight: "500",
     fontSize: 17,
-
     color: "gray",
   },
   about: {
-    display: "flex",
-    alignItems: "flex-start",
     justifyContent: "space-between",
-    flexDirection: "column",
     gap: 10,
   },
   star: {
@@ -95,7 +86,6 @@ const detailsStyles = StyleSheet.create({
     height: 20,
   },
   rating_container: {
-    display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
