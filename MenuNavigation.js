@@ -11,8 +11,8 @@ const Stack = createStackNavigator();
 const MenuNavigation = () => {
   return (
     <NavigationContainer independent={true}>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name='Menu' component={Menu}/>
+      <Stack.Navigator>
+        <Stack.Screen name='Menu' component={Menu} options={{headerShown: false}}/>
         <Stack.Screen name='Search' component={Search} options={styles}/>
         <Stack.Screen name='Details' component={Details} options={styles}/>
       </Stack.Navigator>
@@ -22,12 +22,11 @@ const MenuNavigation = () => {
 
 const styles = StyleSheet.create({
   presentation: 'modal',
-  headerShown: true,
   headerTitleStyle: {
     fontWeight: 'bold'
   },
   headerLeft: ()=> null,
   headerTitleAlign: 'center'
-})
+});
 
 export default MenuNavigation;
