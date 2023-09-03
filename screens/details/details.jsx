@@ -64,7 +64,8 @@ const detailsStyles = StyleSheet.create({
   },
   main_font: {
     fontWeight: "bold",
-    fontSize: 20
+    fontSize: 20,
+    width:"70%"
   },
   price: {
     fontWeight: "bold",
