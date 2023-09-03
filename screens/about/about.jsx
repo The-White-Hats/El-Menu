@@ -58,31 +58,31 @@ const About = () => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: 'white'
-    },
-    about: {
-      flex: 0,
-      marginLeft: 10,
-    },
-    title: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      marginTop: 15
-    },
-    text:{
-      fontSize: 17,
-      color: 'gray'
-    },
-    secretText:{
-      fontSize: 15, color: '#222222'
-    },
-    social: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      marginTop: 5
-    }
+  container: {
+    flex: 1,
+    backgroundColor: 'white'
+  },
+  about: {
+    flex: 0,
+    marginLeft: 10,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 15
+  },
+  text:{
+    fontSize: 17,
+    color: 'gray'
+  },
+  secretText:{
+    fontSize: 15, color: '#222222'
+  },
+  social: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 5
+  }
 });
 
 export default About;
