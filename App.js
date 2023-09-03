@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet } from 'react-native'
 import {useState, useEffect} from 'react';
 import * as Font from 'expo-font';
 
@@ -15,7 +16,7 @@ function MyStack() {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name='Home' component={Home} />
       <Stack.Screen name='MenuNavigation' component={MenuNavigation} />
-      <Stack.Screen name='About' component={About} />
+      <Stack.Screen name='About' component={About} options={styles}/>
     </Stack.Navigator>
   );
 };
@@ -44,3 +45,13 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  presentation: 'modal',
+  headerShown: true,
+  headerTitleStyle: {
+    fontWeight: 'bold'
+  },
+  headerLeft: ()=> null,
+  headerTitleAlign: 'center'
+});
