@@ -1,11 +1,13 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, StatusBar } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const Details = ({route}) => {
   const { dish } = route.params;
 
   return (
-    <View style={detailsStyles.container}>
+    <SafeAreaView style={detailsStyles.container}>
+      <StatusBar backgroundColor='white' barStyle='dark-content' />
       <View style={detailsStyles.img_container}>
         <Image source={{ uri: dish.image_url }} style={detailsStyles.img} />
       </View>
@@ -26,7 +28,7 @@ const Details = ({route}) => {
           <Text style={detailsStyles.description}>{dish.description}</Text>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
