@@ -30,18 +30,13 @@ const Details = ({route}) => {
       </View>
     </SafeAreaView>
   );
-}
-
+};
 
 const detailsStyles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexDirection: "column",
     gap: 20,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    width: "100%",
-    height: "100%",
+    flex: 1,
+    backgroundColor: 'white',
   },
   img: {
     width: "100%",
@@ -59,12 +54,9 @@ const detailsStyles = StyleSheet.create({
   img_container: {
     width: "100%",
     height: 200,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    marginTop: -28
   },
   name_rating_container: {
-    display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
@@ -86,10 +78,7 @@ const detailsStyles = StyleSheet.create({
     color: "gray",
   },
   about: {
-    display: "flex",
-    alignItems: "flex-start",
     justifyContent: "space-between",
-    flexDirection: "column",
     gap: 10,
   },
   star: {
@@ -97,7 +86,6 @@ const detailsStyles = StyleSheet.create({
     height: 20,
   },
   rating_container: {
-    display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
