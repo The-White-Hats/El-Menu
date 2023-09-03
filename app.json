@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "El-Menu",
+    "name": "El Menu",
     "slug": "El-Menu",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ahmed_aladdin.ElMenu"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "abc1a565-ab64-445e-8f3a-eeecfbec3601"
+      }
     }
   }
 }
