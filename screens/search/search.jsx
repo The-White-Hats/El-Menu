@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
-    marginTop: 30,
   },
   searchInput: {
     height: 40,
