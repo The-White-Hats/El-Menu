@@ -74,7 +74,6 @@ const detailsStyles = StyleSheet.create({
   description: {
     fontWeight: "500",
     fontSize: 17,
-
     color: "gray",
   },
   about: {
