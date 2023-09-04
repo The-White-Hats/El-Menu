@@ -128,6 +128,46 @@
           "image_url": "https://img.delicious.com.au/8xGKlyRj/del/2015/11/butterscotch-and-burnt-butter-bananas-21510-2.jpg"
         }
       ]
+    },
+    {
+      "section_name": "Drinks",
+      "dishes": [
+        {
+          "dish_name": "Marshmallow Hot Chocolate",
+          "description": "Hot chocolate topped with marshmallow and salty caramel syrup.",
+          "price": 4.99,
+          "rating": 4.6,
+          "image_url": "https://bakingmischief.com/wp-content/uploads/2021/10/salted-caramel-hot-chocolate-image-square.jpg"
+        },
+        {
+          "dish_name": "Lemon Iced Tea",
+          "description": "Lemon Iced Tea.",
+          "price": 3.99,
+          "rating": 4.4,
+          "image_url": "https://www.acouplecooks.com/wp-content/uploads/2022/03/Lemon-Iced-Tea-001s.jpg"
+        },
+        {
+          "dish_name": "Mixed Blueberry Smoothie",
+          "description": "Fresh mixed blueberry smoothie topped with blueberry and mint.",
+          "price": 5.99,
+          "rating": 4.8,
+          "image_url": "https://www.realsimple.com/thmb/cjO5Tl67GEUvI4KJodq0PJeUAvs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/anti-inflammatory-smoothie-recipe-2000-824af0bcaabd4966947eca2d87760c18.jpg"
+        },
+        {
+          "dish_name": "Mocha",
+          "description": "Iyars of espresso, chocolate syrup, steamed milk and toped with chocolate sprinkles.",
+          "price": 4.99,
+          "rating": 4.9,
+          "image_url": "https://images.immediate.co.uk/production/volatile/sites/2/2021/11/Mocha-1fc71f7.png?quality=90&resize=556,505"
+        },
+        {
+          "dish_name": "Red Tea",
+          "description": "Made of fresh tea leaves delivered every day from india.",
+          "price": 2.99,
+          "rating": 4.2,
+          "image_url": "https://sarooibos.co.za/wp/wp-content/uploads/2020/06/Spicy-Rooibos.jpg"
+        }
+      ]
     }
   ]
 }
