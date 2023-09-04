@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native'
 import Menu from './screens/menu/menu';
 import Search from './screens/search/search';
 import Details from './screens/details/details';
-
+import colors from "./colors.json"
 const Stack = createStackNavigator();
 
 const MenuNavigation = () => {
@@ -23,10 +23,16 @@ const MenuNavigation = () => {
 const styles = StyleSheet.create({
   presentation: 'modal',
   headerTitleStyle: {
-    fontWeight: 'bold'
+    fontWeight: 200,
+    fontFamily: 'dancing-script',
+    fontSize: 35,
+    color: 'white',
   },
   headerLeft: ()=> null,
-  headerTitleAlign: 'center'
+  headerTitleAlign: 'center',
+  headerStyle : {
+    backgroundColor:colors.primary
+  }
 });
 
 export default MenuNavigation;

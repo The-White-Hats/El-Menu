@@ -14,7 +14,7 @@ const Search = ({ route, navigation }) => {
   const menuArr = menu.menu_sections
   return (
     <SafeAreaView style={styles.searchScreen}>
-      <StatusBar backgroundColor='white' barStyle='dark-content' />
+      <StatusBar backgroundColor= {colors.primary} barStyle='dark-content' />
       <View style={styles.searchBar}>
         <TextInput style={styles.searchInput} placeholder="Search" onChangeText={(newText) => setSearchTerm(newText)} defaultValue={SearchTerm} />
           <View style={styles.searchIconContainer}>
